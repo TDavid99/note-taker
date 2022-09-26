@@ -2,10 +2,10 @@ const router = require("express").Router();
 const saveData = require("../db/saveData");
 
 //get route
-router.get('/notes', (req, res) => {
+router.get("/notes", (req, res) => {
     saveData
         .getNotes()
-        .then((notes => { 
+        .then((notes) => { 
             return res.json(notes);
 })
     .catch((err) => {
