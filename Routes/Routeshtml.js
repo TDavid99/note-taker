@@ -10,7 +10,7 @@ router.get('/', (req,res)=>{
 });
 //return to home page
 router.get('*', (req, res) =>{
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, "../public/index"));
 });
 
 module.exports =router;
