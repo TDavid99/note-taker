@@ -8,7 +8,7 @@ const writeFile = util.promisify(fs.writeFile);
 //read write and get notes and add notes
 class Save {
     write(note) {
-        return writeFileAsync("db/db.json", JSON.stringify(note));
+        return writeFile("db/db.json", JSON.stringify(note));
     }
     
     read() {

@@ -1,0 +1,23 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "This application allows the user to save mulitple notes titles and text. For diffenrent events. currents notes are saved in the left-hand column. The data stays after the page refresh.",
+  "main": "sever.js",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TDavid99/note-taker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TDavid99/note-taker/issues"
+  },
+  "homepage": "https://github.com/TDavid99/note-taker#readme"
+}

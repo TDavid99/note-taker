@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: true}));
 app.use("/APi", Apiroutes);
 app.use("/", Routeshtml);
 
-app.use(express.static(path.join(__dirname, "")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(PORT, () =>
 console.log (`App listening at http://localhost:${PORT}`)
