@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const saveData = require("./Routeshtml");
+const saveData = require("../db/SaveData");
 
 //get route
 router.get("/notes", (req, res) => {
@@ -10,7 +10,7 @@ router.get("/notes", (req, res) => {
 })
     .catch((err) => {
         res.status(500).json(err);
-    })
+    });
     });
 //post routes
 router.post("/notes", (req, res) => {
@@ -23,6 +23,14 @@ router.post("/notes", (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+// bonus Delete button 
+router.delete("/notes/:id", function (req, res){
+    saveData
+    .deleteNote(req.params.id)
+    .then(() => res.json ({ok: true}))
+    .catch(err => res.status(500).json(err));
 });
 
 module.exports = router;

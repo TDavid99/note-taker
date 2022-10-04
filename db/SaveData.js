@@ -1,6 +1,6 @@
 const fs = require("fs");
 const util = require("util");
-const {v4: uuidv4} = require("uuidv4")
+const uuidv4 = require("uuidv4")
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -36,7 +36,7 @@ aadNotes(note) {
     const newNote = {
         title,
         text,
-        id: uuidv4()
+        id:uuidv4()
 
     };
     return this.getNotes()
