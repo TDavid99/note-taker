@@ -17,21 +17,22 @@ class Save {
 
 getNotes() {
     return this.read().then(notes => {
+        console.log(notes)
         let parsedNotes;
         try {
             parsedNotes = [].concat(JSON.parse(notes));
         } catch (error) {
             parsedNotes = [];
         }
-        return 
+        return parsedNotes;
 
         });
 }
 
-aadNotes(note) {
+addNote(note) {
     const { title, text } = note;
     if (!title || !text) {
-        throw new error("please type title ans text");
+        throw new error("please type title and text");
     }
     const newNote = {
         title,
