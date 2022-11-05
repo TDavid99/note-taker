@@ -18,7 +18,7 @@ router.get("/notes", (req, res) => {
 //post routes
 router.post("/notes", (req, res) => {
     saveData
-    .NewNote(req.body)
+    .addNote(req.body)
     .then((note) => {
         res.json(note);
     })
