@@ -2,7 +2,7 @@ const express = require('express');
 const path = require("path");
 const fs = require("fs");
 const apiRoutes = require("./routes/apiRoutes");
-const routesHtml = require("./routes/routesHtml");
+const htmlRoutes = require("./routes/htmlRoutes");
 // PORT
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", apiRoutes);
-app.use("/", routesHtml);
+app.use("/", htmlRoutes);
 
 
 app.listen(PORT, () =>

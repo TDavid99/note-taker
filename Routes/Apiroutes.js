@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const saveData = require("../db/SaveData");
 
-const notes = require("../db/db.json");
+// const notes = require("../db/db.json");
 
 //get route
 router.get("/notes", (req, res) => {
     saveData
-    .getNotes()
+    .grabNotes()
     .then((notes) => { 
             console.log (notes)
             return res.json(notes);
@@ -18,7 +18,7 @@ router.get("/notes", (req, res) => {
 //post routes
 router.post("/notes", (req, res) => {
     saveData
-    .addNote(req.body)
+    .NewNote(req.body)
     .then((note) => {
         res.json(note);
     })
