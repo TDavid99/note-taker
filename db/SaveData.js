@@ -1,23 +1,22 @@
 const fs = require("fs");
 const util = require("util");
-const uuidv4 = require("uuidv4")
+const uuid = require("../helpers/uuid")
 
-const readFile = util.promisify(fs.readFile);
-const writeFile = util.promisify(fs.writeFile);
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 //read write and get notes and add notes
 class Save {
     write(note) {
-        return writeFile("db/db.json", JSON.stringify(note));
+        return writeFileAsync("db/db.json", JSON.stringify(note));
     }
     
     read() {
-        return readFile("db/db.json", "utf-8");
+        return readFileAsync("db/db.json", "utf-8");
     }
 
-getNotes() {
+grabNotes() {
     return this.read().then(notes => {
-        console.log(notes)
         let parsedNotes;
         try {
             parsedNotes = [].concat(JSON.parse(notes));
@@ -28,8 +27,7 @@ getNotes() {
 
         });
 }
-
-addNote(note) {
+NewNotes(note) {
     const { title, text } = note;
     const newNote = { 
         title,
@@ -37,7 +35,7 @@ addNote(note) {
         id:uuid(),
 
     };
-    return this.getNotes()
+    return this.grabNotes()
         .then(notes => [...notes, newNote])
         .then(updatedNotes => this.write(updatedNotes))
         .then(() => newNote);
