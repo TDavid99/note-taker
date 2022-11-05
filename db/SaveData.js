@@ -31,13 +31,10 @@ getNotes() {
 
 addNote(note) {
     const { title, text } = note;
-    if (!title || !text) {
-        throw new error("please type title and text");
-    }
-    const newNote = {
+    const newNote = { 
         title,
         text,
-        id:uuidv4()
+        id:uuid(),
 
     };
     return this.getNotes()
@@ -45,6 +42,6 @@ addNote(note) {
         .then(updatedNotes => this.write(updatedNotes))
         .then(() => newNote);
 }
-};
+}
 
 module.exports = new Save();
