@@ -40,6 +40,7 @@ NewNotes(note) {
         .then(updatedNotes => this.write(updatedNotes))
         .then(() => newNote);
 }
+
 }
 
 module.exports = new Save();
