@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
-app.get("/api", apiRoutes);
-app.get("/", htmlRoutes);
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 
 
 app.listen(PORT, () =>
