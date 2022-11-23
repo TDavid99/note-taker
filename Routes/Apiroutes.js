@@ -29,11 +29,23 @@ router.post("/notes", (req, res) => {
 });
 
 // bonus Delete button 
-router.delete("/notes/:id", function (req, res){
-    saveData
-    .deleteNote(req.params.id)
-    .then(() => res.json ({ok: true}))
-    .catch(err => res.status(500).json(err));
-});
+
+function deletesNote(id, notesArray) {
+    for (let i = 0; i < notesArray.length; i++) {
+      let notes = notesArray[i];
+  
+      if (notes.id == id) {
+        notesArray.splice(i, 1);
+        fs.writeFileSync(
+          path.join(__dirname, "../db/db.json"),
+          JSON.stringify(notesArray, null, 2)
+        );
+        break;
+      }}}
+      router.delete("/api/notes/:id", (req, res) => {
+        deletesNote(req.params.id, notes);
+        res.json(true);
+      });
+    
 
 module.exports = router;

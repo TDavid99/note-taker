@@ -30,8 +30,7 @@ explaing the Note taker repo?
 
 
 
-![Alt text](/Develop/public/assets/images/Screenshot%20(198).png)
+![Alt text](./public/assets/images/Screenshot%20(198).png)
 
-http://127.0.0.1:5501/Develop/public/index.html
 
 
