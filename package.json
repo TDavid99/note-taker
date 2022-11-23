@@ -4,9 +4,8 @@
   "description": "This application allows the user to save mulitple notes titles and text. For diffenrent events. currents notes are saved in the left-hand column. The data stays after the page refresh.",
   "main": "sever.js",
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "uuid": "^9.0.0"
-  
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
