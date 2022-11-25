@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/TDavid99/note-taker/issues"
   },
-  "homepage": "https://github.com/TDavid99/note-taker#readme"
+  "homepage": "https://github.com/TDavid99/note-taker#readme",
+  "devDependencies": {}
 }
