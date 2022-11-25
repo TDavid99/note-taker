@@ -15,8 +15,8 @@ class Save {
         return readFileAsync("db/db.json", "utf-8");
     }
 
-grabNotes() {
-    return this.read().then(notes => {
+getNotes() {
+    return this.read().then((notes) => {
         let parsedNotes;
         try {
             parsedNotes = [].concat(JSON.parse(notes));
@@ -27,7 +27,7 @@ grabNotes() {
 
         });
 }
-NewNotes(note) {
+addNotes(note) {
     const { title, text } = note;
     const newNote = { 
         title,
@@ -35,13 +35,20 @@ NewNotes(note) {
         id:uuid(),
 
     };
-    return this.grabNotes()
+    return this.getNotes()
         .then(notes => [...notes, newNote])
         .then(updatedNotes => this.write(updatedNotes))
         .then(() => newNote);
-}
 
 
+// deleteNotes(note) {
+//     const { title, text } = note;
+//     const newNote = { 
+//         title,
+//         text,
+//         id:uuid()
+
+    }
 }
 
 module.exports = new Save();
