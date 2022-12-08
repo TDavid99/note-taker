@@ -31,6 +31,6 @@ explaing the Note taker repo?
 
 
 ![Alt text](./public/assets/images/Screenshot%20(198).png)
-
+Heroku Deployment- https://note-takerlol.herokuapp.com/
 
 
